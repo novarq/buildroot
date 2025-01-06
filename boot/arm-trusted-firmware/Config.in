@@ -300,4 +300,27 @@ config BR2_TARGET_ARM_TRUSTED_FIRMWARE_SSP_LEVEL
 	default "strong"  if BR2_SSP_STRONG
 	default "all"     if BR2_SSP_ALL
 
+config BR2_TARGET_ARM_TRUSTED_FIRMWARE_TRUSTED_BOARD_BOOT
+	bool "Enable Trusted Board boot"
+	help
+	  Enables trusted board boot.
+	  More info:
+	  https://wiki.st.com/stm32mpu/wiki/TF-A_BL2_Trusted_Board_Boot
+
+endif
+
+if BR2_TARGET_ARM_TRUSTED_FIRMWARE_TRUSTED_BOARD_BOOT
+
+config BR2_TARGET_ARM_TRUSTED_FIRMWARE_ROT_KEY
+	string "Path to the ROT private key"
+	help
+	  The path to the private ROT key used by ATF.
+	  The private key must be in PEM format.
+
+config BR2_TARGET_ARM_TRUSTED_FIRMWARE_MBEDTLS_VERSION
+	string "The version number (ex 2.8) needed for the secure boot"
+	help
+	  This option will enable the build of the specific version
+	  of mbedtls required for TFA trusted boot.
+	  For ATF lts-v2.10.5 use 3.6.2
 endif
