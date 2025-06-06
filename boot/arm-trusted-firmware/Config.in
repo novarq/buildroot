@@ -307,8 +307,6 @@ config BR2_TARGET_ARM_TRUSTED_FIRMWARE_TRUSTED_BOARD_BOOT
 	  More info:
 	  https://wiki.st.com/stm32mpu/wiki/TF-A_BL2_Trusted_Board_Boot
 
-endif
-
 if BR2_TARGET_ARM_TRUSTED_FIRMWARE_TRUSTED_BOARD_BOOT
 
 config BR2_TARGET_ARM_TRUSTED_FIRMWARE_ROT_KEY
@@ -323,4 +321,6 @@ config BR2_TARGET_ARM_TRUSTED_FIRMWARE_MBEDTLS_VERSION
 	  This option will enable the build of the specific version
 	  of mbedtls required for TFA trusted boot.
 	  For ATF lts-v2.10.5 use 3.6.2
+
+endif
 endif
